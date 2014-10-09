@@ -1,0 +1,30 @@
+    <?php
+    $form = $this->form;
+    $form->prepare();
+    $form->setAttribute('action', $this->url('login'));
+    $form->setAttribute('method', 'post');
+    ?>
+    <?php echo($message); ?>
+    <?php echo $this->form()->openTag($form); ?>
+<table>
+    <tr>
+        <td><?= $form->get('username')->getLabel() ?></td>
+        <td><?= $this->formElement($form->get('username')) ?></td>
+    </tr>
+    <tr>
+        <td><?= $form->get('password')->getLabel() ?></td>
+        <td><?= $this->formElement($form->get('password')) ?></td>
+    </tr>
+    <tr>
+        <td><?= $form->get('rememberMe')->getLabel() ?></td>
+        <td><?= $this->formElement($form->get('rememberMe')) ?></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td><?= $this->formElement($form->get('submit')) ?>
+        </td>
+    </tr>
+</table>
+
+    <?php echo $this->form()->closeTag($this->form); ?>
+</form>
